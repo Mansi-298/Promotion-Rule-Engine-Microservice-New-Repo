@@ -1,0 +1,99 @@
+rules:
+  - id: vip_weekend_bonus
+    name: "VIP Weekend Bonus"
+    description: "50% bonus coins for high-spending weekend players"
+    priority: 10
+    conditions:
+      - field: spendTier
+        operator: equals
+        value: "high"
+      - field: daysSinceLastPurchase
+        operator: lessThan
+        value: 7
+      - field: level
+        operator: greaterThan
+        value: 20
+    reward:
+      type: "coins"
+      multiplier: 1.5
+    validUntil: "2024-12-31T23:59:59Z"
+
+  - id: new_player_welcome
+    name: "New Player Welcome"
+    description: "Welcome bonus for new players"
+    priority: 5
+    conditions:
+      - field: level
+        operator: lessThan
+        value: 10
+      - field: daysSinceLastPurchase
+        operator: greaterThan
+        value: 30
+    reward:
+      type: "items"
+      items: ["sword", "shield", "potion"]
+    validUntil: "2024-12-31T23:59:59Z"
+
+  - id: comeback_player_bonus
+    name: "Comeback Player Bonus"
+    description: "Special offer for returning players"
+    priority: 8
+    conditions:
+      - field: daysSinceLastPurchase
+        operator: greaterThan
+        value: 14
+      - field: level
+        operator: greaterThan
+        value: 15
+      - field: spendTier
+        operator: equals
+        value: "medium"
+    reward:
+      type: "coins"
+      multiplier: 1.25
+    validUntil: "2024-12-31T23:59:59Z"
+
+  - id: high_level_achievement
+    name: "High Level Achievement"
+    description: "Reward for reaching high levels"
+    priority: 6
+    conditions:
+      - field: level
+        operator: greaterThan
+        value: 50
+    reward:
+      type: "items"
+      items: ["legendary_weapon", "rare_armor"]
+    validUntil: "2024-12-31T23:59:59Z"
+
+  - id: country_specific_us
+    name: "US Player Special"
+    description: "Special promotion for US players"
+    priority: 4
+    conditions:
+      - field: country
+        operator: equals
+        value: "US"
+      - field: spendTier
+        operator: equals
+        value: "medium"
+    reward:
+      type: "coins"
+      multiplier: 1.2
+    validUntil: "2024-12-31T23:59:59Z"
+
+  - id: multiplayer_enthusiast
+    name: "Multiplayer Enthusiast"
+    description: "Bonus for multiplayer fans"
+    priority: 3
+    conditions:
+      - field: gameMode
+        operator: contains
+        value: "multiplayer"
+      - field: level
+        operator: greaterThan
+        value: 25
+    reward:
+      type: "items"
+      items: ["team_boost", "communication_pack"]
+    validUntil: "2024-12-31T23:59:59Z"
