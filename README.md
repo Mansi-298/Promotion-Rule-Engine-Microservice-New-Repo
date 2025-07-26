@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application built with a modern React frontend and Express.js backend that serves as a promotion engine for gaming applications. The system evaluates player attributes against configurable rules to determine promotional offers in real-time. It features a comprehensive API documentation interface, live metrics dashboard, and dynamic rule configuration system.
+Used Express.js backend that serves as a promotion engine for gaming applications. The system evaluates player attributes against configurable rules to determine promotional offers in real-time. It features a comprehensive API documentation interface, live metrics dashboard, and dynamic rule configuration system.
 
 ## User Preferences
 
@@ -12,20 +12,11 @@ Preferred communication style: Simple, everyday language.
 
 ### Full-Stack Structure
 The application follows a monorepo structure with clear separation between client, server, and shared code:
-- **Frontend**: React application with TypeScript using Vite for development and build
 - **Backend**: Express.js server with TypeScript
 - **Shared**: Common schemas and types using Zod for validation
-- **Database**: PostgreSQL with Drizzle ORM for data management
 
 ### Technology Stack
-- **Frontend Framework**: React 18 with TypeScript
-- **UI Library**: shadcn/ui components built on Radix UI primitives
-- **Styling**: Tailwind CSS with CSS variables for theming
-- **State Management**: TanStack Query for server state management
 - **Backend Framework**: Express.js with TypeScript
-- **Database**: PostgreSQL with Drizzle ORM
-- **Validation**: Zod schemas for runtime type checking
-- **Build Tools**: Vite for frontend, esbuild for backend bundling
 
 ## Key Components
 
@@ -88,37 +79,6 @@ The application follows a monorepo structure with clear separation between clien
 2. Response time measurement for performance analysis
 3. Success/failure rate calculation
 4. Real-time dashboard updates via polling
-
-## External Dependencies
-
-### Database Integration
-- **Drizzle ORM**: Type-safe database operations with PostgreSQL
-- **@neondatabase/serverless**: Serverless PostgreSQL connection
-- **connect-pg-simple**: PostgreSQL session store for Express
-
-### UI Framework Dependencies
-- **Radix UI**: Comprehensive component primitives for accessibility
-- **Tailwind CSS**: Utility-first styling with custom design system
-- **Lucide React**: Icon library for consistent iconography
-
-### Development Tools
-- **TypeScript**: Strong typing across the entire stack
-- **Vite**: Fast development server with hot module replacement
-- **ESBuild**: Fast bundling for production builds
-
-## Deployment Strategy
-
-### Development Environment
-- Vite dev server for frontend with hot reloading
-- Express server with tsx for TypeScript execution
-- Automatic error overlay for development debugging
-- File system routing and middleware setup
-
-### Production Build
-1. Frontend: Vite builds to optimized static assets
-2. Backend: ESBuild bundles server code to single executable
-3. Static file serving through Express in production
-4. Environment-based configuration management
 
 ### Configuration Management
 - Environment variables for database connections
